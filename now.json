@@ -2,7 +2,8 @@
   "alias": "hm-backport",
   "functions": {
     "src/index.ts": {
-      "memory": 128
+      "memory": 128,
+      "runtime": "@now/node"
     }
   },
   "env": {
