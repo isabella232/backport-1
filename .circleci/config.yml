@@ -25,7 +25,7 @@ jobs:
       - checkout
       - run: yarn install --frozen-lockfile
       - run: sudo yarn global add now --prefix /usr/local
-      - run: now --no-clipboard --target production --token $NOW_TOKEN
+      - run: now --no-clipboard --prod --token $NOW_TOKEN
       - run: now --token $NOW_TOKEN rm backport --safe --yes
 
 workflows:
