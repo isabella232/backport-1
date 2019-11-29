@@ -28,7 +28,8 @@
   "name": "hm-backport",
   "private": true,
   "scripts": {
-    "check-build": "tsc --build tsconfig.build.json",
+    "build": "tsc --build tsconfig.build.json",
+    "check-build": "tsc --build tsconfig.check.json",
     "prettier": "prettier --ignore-path .gitignore \"**/*.{js,json,md,ts,yml}\"",
     "test": "jest",
     "tslint": "tslint --format stylish --project ."
