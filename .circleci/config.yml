@@ -34,11 +34,11 @@ workflows:
       - check:
           filters:
             branches:
-              ignore: master
+              ignore: app
 
   deploy:
     jobs:
       - deploy:
           filters:
             branches:
-              only: master
+              only: app

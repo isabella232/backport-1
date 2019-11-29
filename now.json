@@ -1,5 +1,5 @@
 {
-  "alias": "backport",
+  "alias": "hm-backport",
   "builds": [{ "src": "src/index.ts", "use": "@now/node" }],
   "env": {
     "APP_ID": "@backport-app-id",
