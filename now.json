@@ -1,7 +1,7 @@
 {
   "alias": "hm-backport",
   "functions": {
-    "src/index.js": {
+    "src/index.ts": {
       "memory": 128
     }
   },
@@ -13,6 +13,6 @@
     "SENTRY_DSN": "@backport-sentry-dsn",
     "WEBHOOK_SECRET": "@backport-webhook-secret"
   },
-  "routes": [{ "src": "/", "dest": "src/index.js" }],
+  "routes": [{ "src": "/", "dest": "src/index.ts" }],
   "version": 2
 }
