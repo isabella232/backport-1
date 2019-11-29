@@ -1,6 +1,10 @@
 {
   "alias": "hm-backport",
-  "builds": [{ "src": "src/index.ts", "use": "@now/node" }],
+  "functions": {
+    "src/index.ts": {
+      "memory": 128
+    }
+  },
   "env": {
     "APP_ID": "@backport-app-id",
     "DEBUG": "@backport-debug",
