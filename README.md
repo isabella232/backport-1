@@ -1,4 +1,4 @@
-[![build status](https://img.shields.io/circleci/project/github/tibdex/backport.svg)](https://circleci.com/gh/tibdex/backport)
+[![build status](https://img.shields.io/circleci/project/github/tibdex/backport.svg)](https://circleci.com/gh/humanmade/backport)
 
 # Goal
 

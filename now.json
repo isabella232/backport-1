@@ -1,11 +1,5 @@
 {
   "alias": "hm-backport",
-  "functions": {
-    "src/index.ts": {
-      "memory": 128,
-      "runtime": "@now/node@1.2.0"
-    }
-  },
   "env": {
     "APP_ID": "@backport-app-id",
     "DEBUG": "@backport-debug",
@@ -14,6 +8,6 @@
     "SENTRY_DSN": "@backport-sentry-dsn",
     "WEBHOOK_SECRET": "@backport-webhook-secret"
   },
-  "routes": [{ "src": "/", "dest": "src/index.ts" }],
+  "routes": [{ "src": "/", "dest": "api/index" }],
   "version": 2
 }

@@ -184,7 +184,7 @@ describe("nominal behavior", () => {
         repo,
       });
       backportedPullRequestNumber = ((results as any) as PullRequestNumber[])[0];
-    }, 30000);
+    }, 60000);
 
     afterAll(async () => {
       await deleteRefs();

@@ -3,5 +3,5 @@
     "noEmit": true
   },
   "extends": "./tsconfig.json",
-  "include": ["src/index.ts"]
+  "include": ["api/index.ts"]
 }
