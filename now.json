@@ -8,5 +8,6 @@
     "SENTRY_DSN": "@backport-sentry-dsn",
     "WEBHOOK_SECRET": "@backport-webhook-secret"
   },
+  "routes": [{ "src": "/", "dest": "/api" }],
   "version": 2
 }
