@@ -1,5 +1,5 @@
 import * as Octokit from "@octokit/rest";
-import * as createDebug from "debug";
+import Debug from "debug";
 import { backportPullRequest } from "github-backport";
 import pSeries from "p-series";
 import {
@@ -21,7 +21,7 @@ type Payload = {
   };
 };
 
-const debug = createDebug("backport");
+const debug = Debug("backport");
 
 const regExp = /^backport ([^ ]+)(?: ([^ ]+))?$/;
 

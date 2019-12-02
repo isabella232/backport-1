@@ -3,5 +3,5 @@
     "noEmit": true
   },
   "extends": "./tsconfig.json",
-  "include": ["api/index.ts"]
+  "include": ["api/bot.ts"]
 }
