@@ -100,7 +100,7 @@ const backportForLabel = async ({
         "# Delete the working tree.",
         "git worktree remove .worktrees/backport",
         `# Then, create a pull request where the \`base\` branch is \`${base}\` and the \`compare\`/\`head\` branch is \`${definedHead}\`.`,
-        `echo -e "[Backport ${base}] ${pullrequest.title} #${pullRequestNumber}\n\nBackport #${pullRequestNumber}." | hub pull-request -b ${base} -h ${definedHead} --input -`,
+        `echo -e "[Backport ${base}] ${pullrequest.title}\n\nBackport #${pullRequestNumber}." | hub pull-request -b ${base} -h ${definedHead} --input -`,
         "```"
       ].join("\n"),
       number: pullRequestNumber,
