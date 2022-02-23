@@ -66,6 +66,11 @@ const backportForLabel = async ({
     });
     const definedHead = head || `backport-${pullRequestNumber}-to-${base}`;
     debug("backport failed", error);
+    const pullrequest = await octokit.request('GET /repos/{owner}/{repo}/pulls/{pull_number}', {
+      owner,
+      repo,
+      pull_number: pullRequestNumber
+    });
     await octokit.issues.createComment({
       body: [
         `The backport to \`${base}\` failed:`,
@@ -83,6 +88,9 @@ const backportForLabel = async ({
         "cd .worktrees/backport",
         "# Cherry-pick all the commits of this pull request and resolve the likely conflicts.",
         `git cherry-pick ${commitsToCherryPick.join(" ")}`,
+        "```",
+        "Resolve the conflicts, then:",
+        "```",
         "# Create a new branch with these backported commits.",
         `git checkout -b ${definedHead}`,
         "# Push it to GitHub.",
@@ -91,8 +99,9 @@ const backportForLabel = async ({
         "cd ../..",
         "# Delete the working tree.",
         "git worktree remove .worktrees/backport",
-        "```",
-        `Then, create a pull request where the \`base\` branch is \`${base}\` and the \`compare\`/\`head\` branch is \`${definedHead}\`.`,
+        `# Then, create a pull request where the \`base\` branch is \`${base}\` and the \`compare\`/\`head\` branch is \`${definedHead}\`.`,
+        `echo -e "[Backport ${base}] ${pullrequest.title} #${pullRequestNumber}\n\nBackport #${pullRequestNumber}." | hub pull-request -b ${base} -h ${definedHead} --input -`,
+        "```"
       ].join("\n"),
       number: pullRequestNumber,
       owner,
